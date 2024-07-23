@@ -1,0 +1,152 @@
+body {
+    background-color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #e0e0e0;
+  }
+  
+  .app {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .note-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c2c2c;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+  }
+  
+  form input[type="text"], form textarea {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
+    width: calc(100% - 20px);
+  }
+  
+  form input[type="text"]::placeholder, form textarea::placeholder {
+    color: #a0a0a0;
+  }
+  
+  form label {
+    color: #e0e0e0;
+    margin-right: 10px;
+  }
+  
+  form button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  form button:hover {
+    background: #d32f2f;
+  }
+  
+  .notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px; /* Ajusta el tamaño máximo para centrar las notas */
+    margin: 25px auto;
+    gap: 20px; /* Espacio entre notas */
+  }
+  
+  .note {
+    background: #fffae3;
+    padding: 24px;
+    border: 1px solid #201919;
+    border-radius: 7px;
+    width: calc(25% - 20px); /* Ajusta el ancho para tener 4 notas por fila */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    color: #333;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transform: rotate(var(--rotate, -3deg)); /* Un poco de rotación para parecer notas */
+  }
+  
+  .note::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.158);
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+  
+  .note.important {
+    background: #ff6f61;
+  }
+  
+  .note h3 {
+    margin-top: 0;
+    font-family: 'Patrick Hand', cursive; /* Fuente manuscrita para el título */
+    text-align: left; /* Alineación del título a la izquierda */
+    margin-bottom: 10px; /* Espacio inferior para separar del contenido */
+  }
+  
+  .note p {
+    font-family: 'Patrick Hand', cursive; /* Fuente manuscrita para el contenido */
+    margin-top: 0;
+    text-align: center; /* Alineación del contenido centrado */
+  }
+  
+  .note button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-end;
+  }
+  
+  .note button:hover {
+    background: #d32f2f;
+  }
+  
+  @media (max-width: 1200px) {
+    .note {
+      width: calc(25% - 20px); /* Mantén 4 notas por fila en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .note {
+      width: calc(50% - 20px); /* 2 notas por fila en pantallas pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .note {
+      width: calc(100% - 20px); /* Ancho completo para vista móvil */
+    }
+  }
+  
